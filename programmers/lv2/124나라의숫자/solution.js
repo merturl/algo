@@ -3,8 +3,11 @@ function solution(n) {
   const units = [4, 1, 2];
   while (n) {
     answer = units[n % 3] + answer;
-    n = n % 3 == 0 ? n / 3 - 1 : Math.floor(n / 3);
-    console.log(n);
+    if (n % 3 === 0) {
+      n = n / 3 - 1;
+    } else {
+      n = Math.floor(n / 3);
+    }
   }
   return answer;
 }
